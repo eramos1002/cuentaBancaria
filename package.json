@@ -1,0 +1,24 @@
+{
+    "name": "cuentaBancaria",
+    "version": "1.0.0",
+    "description": "",
+    "main": "cuentaBancaria.js",
+    "scripts": {
+        "start": "parcel index.html",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eramos1002/cuentaBancaria.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/eramos1002/cuentaBancaria/issues"
+    },
+    "homepage": "https://github.com/eramos1002/cuentaBancaria#readme",
+    "devDependencies": {
+        "parcel-bundler": "^1.12.4"
+    }
+}

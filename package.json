@@ -5,7 +5,7 @@
     "main": "cuentaBancaria.js",
     "scripts": {
         "start": "parcel index.html",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "./node_modules/.bin/mocha --require babel-core/register --reporter test"
     },
     "repository": {
         "type": "git",
@@ -19,6 +19,11 @@
     },
     "homepage": "https://github.com/eramos1002/cuentaBancaria#readme",
     "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.3",
+        "babel-preset-es2015": "^6.24.1",
+        "chai": "^4.2.0",
+        "mocha": "^8.2.1",
         "parcel-bundler": "^1.12.4"
     }
 }

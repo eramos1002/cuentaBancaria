@@ -1,4 +1,4 @@
-import Bank from '../src/domain/bank';
+import Bank from '../../src/domain/bank';
 const assert = require("chai").assert;
 
 describe("Unit tests: ", () => {

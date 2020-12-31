@@ -5,7 +5,7 @@
     "main": "cuentaBancaria.js",
     "scripts": {
         "start": "parcel index.html",
-        "test": "./node_modules/.bin/mocha --require babel-core/register --reporter spec"
+        "test": "./node_modules/.bin/mocha test/**/*.js --require babel-core/register --reporter spec"
     },
     "repository": {
         "type": "git",

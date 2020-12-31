@@ -1,5 +1,5 @@
 export default class Bank {
-    status() {
+    testStatus() {
         return 'working';
     }
 }

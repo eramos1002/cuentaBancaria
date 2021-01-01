@@ -17,6 +17,10 @@ describe("Account tests: ", () => {
     });
 
     const account = new Account('ES60 0049 1500 0512 3456 7892', '48942854g');
+
+    it("Account class", () => {
+        assert.equal(account.constructor.name, "Account");
+    });
     
     it("Account is created with status 'open', balance '0' and normalized input parameters 'iban' and 'document'", () => {
         assert.equal(account.iban, "ES6000491500051234567892");

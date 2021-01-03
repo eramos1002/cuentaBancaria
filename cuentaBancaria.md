@@ -11,7 +11,7 @@ Debe ser posible cerrar la cuenta, las operaciones contra una cuenta cerrada deb
 Este proyecto contmepla tener una serie de cuentas bancarias identificadas por el código IBAN
 
 Las cuentas seran creadas. Para crear una cuenta
-es necesrio especificar IBAN, nombre, apellidos y documento de identidad del titular de la cuenta.
+es necesrio especificar IBAN y documento de identidad del titular de la cuenta.
 
 Si el IBAN o el número de identidad no es válido, lanza un error y la cuenta no se crea.
 

@@ -1,60 +1,19 @@
-class Account {
-    constructor(iban, document) {
-        this.iban = iban;
-        this.document = document;
-        this.balance = 0; // saldo
-        this.status = "open";
-    }
-    open() {
-        if (this.status === "close") {
-            this.status = "open";
-        }
-    }
-    close() {
-        if (this.status === "open") {
-            this.status = "close";
-        }
-    }
-    deposit(amount) {
-        if (this.status === "close") {
-            throw new Error("La cuenta esta cerrada");
-        }
-        if (isNaN(amount) || amount <= 0) {
-            throw new Error("El importe debe ser una cantidad positiva");
-        }
-        this.balance += amount;
-    }
-    withdraw(amount) {
-        if (this.status === "close") {
-            throw new Error("La cuenta esta cerrada");
-        }
-        if (isNaN(amount) || amount <= 0 || amount > this.balance) {
-            throw new Error(
-                "El importe debe ser una cantidad positiva y menor que el saldo"
-            );
-        }
-        this.balance -= amount;
-    }
+import Account from './domain/account';
 
-    getBalance() {
-        if (this.status === "close") {
-            throw new Error("La cuenta esta cerrada");
-        }
-        return this.balance;
-    }
-}
-class Bank {
-    constructor() {
-        this.accounts = {};
-    }
-    addAccount(account) {
-        // falta especificar si no es valido y dni
-        if (typeof this.accounts[account] === undefined) {
-            throw new Error("La cuenta no es valida");
-        }
-        this.accounts[account.iban] = account;
-    }
-    getAccountbyIban(Iban) {}
+// Cuenta creada, luego tiene saldo 0
+const account = new Account('ES60 0049 1500 0512 3456 7892', '48942854g');
 
-    findAccountbyDocument(document) {}
-}
+// Ejecuto un depósito asíncrono
+const promise = account.depositV2(40, 'USD');
+
+// Si hago el console.log inmediatamente, vemos que todavía no se ha hecho efectivo
+console.log(`A) El saldo de la cuenta es ${account.balance}`); // A) El saldo de la cuenta es 0
+
+// Pero aquí lo que digo es: haz el console.log cuando la promesa haya terminado
+promise
+.then(() => {
+    console.log(`B) El saldo de la cuenta es ${account.balance}`); // B) El saldo de la cuenta es 40
+})
+.catch(err => {
+    console.error('err', err);
+});
